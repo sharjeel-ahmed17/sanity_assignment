@@ -1,8 +1,27 @@
 // import {} from 'lucide-react'
 
+import { client } from "@/sanity/lib/client"
 import Image from "next/image"
-
-const Work = () => {
+const getData = async () => {
+    const res = await client.fetch(`*[_type == "blogs"]{
+  title,
+  year,
+  category,
+  description,
+  "imageUrl": image.asset->url,
+  image{
+    alt
+  }
+}
+`)
+    // console.log("res>>>",res)
+    return res
+   
+  }
+const Work = async() => {
+    const data =await getData();
+    console.log(data);
+    
     return (
         <div className="py-20 w-[80%]">
             <h2 className="text-[22px] ladding-[32.31px] font-medium mb-3">Featured works</h2>
