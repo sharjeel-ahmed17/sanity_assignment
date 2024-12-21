@@ -1,7 +1,16 @@
-export default function Home (){
+import Hero from "@/components/hero/Hero"
+import Post from "@/components/post/Post"
+import Work from "@/components/work/Work"
+
+
+const Home = () => {
   return (
-    <>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum placeat minus, reprehenderit dicta repellendus atque fuga itaque inventore modi impedit similique sequi qui quis, sint ratione reiciendis illo voluptate! Laboriosam.</p>
-    </>
+    <div>
+      <Hero />
+      <Post />
+      <Work />
+    </div>
   )
 }
+
+export default Home
